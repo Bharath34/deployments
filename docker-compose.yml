@@ -1,0 +1,29 @@
+version: '2'
+service:
+
+ravi_test1:
+image: "devopscafe/amusement-park"
+ports:
+  -"80:80"
+  environment:
+    "envirorment-dev"
+    netwrok:
+     ravis_network:
+     ipv4-address: "10.10.5.0
+     ravi_test1:
+image: "devopscafe/temp-app"
+ports:
+  -"82:80"
+  environment:
+    "environment-devnew"
+    netwrok:
+     ravis_network:
+     ipv4-address: "10.10.6.0
+     networks:
+     ravis_network:
+     driver:"bridge"
+     ipam:
+     config:
+     subnet: "10.10.0.0/16"
+     
+     "docker-compose.yml" 28L, 512c
